@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cda59f8d-d21a-4baa-b2e3-0e0fee4c7ea0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +50,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/one" />
+      <recent name="$PROJECT_DIR$/source/two" />
+      <recent name="$PROJECT_DIR$/source/one/oneFirstFolder" />
       <recent name="$PROJECT_DIR$/testField/one/oneFirst/oneFirstFirst" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -63,7 +70,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598182759111</updated>
-      <workItem from="1598182760209" duration="4993000" />
+      <workItem from="1598182760209" duration="6726000" />
     </task>
     <servers />
   </component>
@@ -87,22 +94,22 @@
       <screen x="0" y="23" width="1481" height="937" />
     </state>
     <state x="511" y="196" key="Github.UntrackedFilesDialog/0.23.1481.937@0.23.1481.937" timestamp="1598187915172" />
-    <state width="1358" height="237" key="GridCell.Tab.0.bottom" timestamp="1598186688549">
+    <state width="1358" height="237" key="GridCell.Tab.0.bottom" timestamp="1598190008476">
       <screen x="0" y="23" width="1481" height="937" />
     </state>
-    <state width="1358" height="237" key="GridCell.Tab.0.bottom/0.23.1481.937@0.23.1481.937" timestamp="1598186688549" />
-    <state width="1358" height="237" key="GridCell.Tab.0.center" timestamp="1598186688548">
+    <state width="1358" height="237" key="GridCell.Tab.0.bottom/0.23.1481.937@0.23.1481.937" timestamp="1598190008476" />
+    <state width="1358" height="237" key="GridCell.Tab.0.center" timestamp="1598190008475">
       <screen x="0" y="23" width="1481" height="937" />
     </state>
-    <state width="1358" height="237" key="GridCell.Tab.0.center/0.23.1481.937@0.23.1481.937" timestamp="1598186688548" />
-    <state width="1358" height="237" key="GridCell.Tab.0.left" timestamp="1598186688548">
+    <state width="1358" height="237" key="GridCell.Tab.0.center/0.23.1481.937@0.23.1481.937" timestamp="1598190008475" />
+    <state width="1358" height="237" key="GridCell.Tab.0.left" timestamp="1598190008475">
       <screen x="0" y="23" width="1481" height="937" />
     </state>
-    <state width="1358" height="237" key="GridCell.Tab.0.left/0.23.1481.937@0.23.1481.937" timestamp="1598186688548" />
-    <state width="1358" height="237" key="GridCell.Tab.0.right" timestamp="1598186688549">
+    <state width="1358" height="237" key="GridCell.Tab.0.left/0.23.1481.937@0.23.1481.937" timestamp="1598190008475" />
+    <state width="1358" height="237" key="GridCell.Tab.0.right" timestamp="1598190008476">
       <screen x="0" y="23" width="1481" height="937" />
     </state>
-    <state width="1358" height="237" key="GridCell.Tab.0.right/0.23.1481.937@0.23.1481.937" timestamp="1598186688549" />
+    <state width="1358" height="237" key="GridCell.Tab.0.right/0.23.1481.937@0.23.1481.937" timestamp="1598190008476" />
     <state width="1358" height="294" key="GridCell.Tab.1.bottom" timestamp="1598186562313">
       <screen x="0" y="23" width="1481" height="937" />
     </state>
@@ -159,10 +166,10 @@
       <screen x="0" y="23" width="1481" height="937" />
     </state>
     <state x="140" y="143" width="1200" height="697" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1481.937@0.23.1481.937" timestamp="1598187729904" />
-    <state x="405" y="238" key="search.everywhere.popup" timestamp="1598182771952">
+    <state x="405" y="238" width="670" height="676" key="search.everywhere.popup" timestamp="1598189251507">
       <screen x="0" y="23" width="1481" height="937" />
     </state>
-    <state x="405" y="238" key="search.everywhere.popup/0.23.1481.937@0.23.1481.937" timestamp="1598182771952" />
+    <state x="405" y="238" width="670" height="676" key="search.everywhere.popup/0.23.1481.937@0.23.1481.937" timestamp="1598189251507" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -175,7 +182,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app.js</url>
-          <line>5</line>
+          <line>1</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="19" />
         </line-breakpoint>

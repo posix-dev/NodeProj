@@ -1,114 +1,30 @@
-const path = require('path');
-const fs = require("fs");
-const config = require("./config");
-const {isDelete} = require("./config");
+const http = require("http");
 
-const sourceFolderName = config.sourceFolderName,
-    targetFolderName = config.targetFolderName,
-    rootFolderPath = config.rootFolderPath;
+const DURATION = 5000;
+const INTERVAL = 1000;
+const PORT = 3004;
 
-fs.readdir(rootFolderPath, (err, files) => {
-    if (err || files.indexOf(sourceFolderName) === -1) {
-        console.log('Путь к исходной папке указан неверно');
-        return
+const server = http.createServer((req, res) => {
+    console.log(`Метод: ${req.method}`);
+    console.log(`URL: ${req.url}`);
+    if (req.url === '/') {
+        displayMessages().then((response) => res.end(response));
     }
-
-    //create target folder and search in source folder
-    fs.mkdir(targetFolderName, {recursive: true}, err => {
-        if (err) return;
-
-        recursiveSearch(sourceFolderName);
-    })
 });
 
-const recursiveSearch = function (directoryName) {
-    fs.readdir(directoryName, (err, files) => {
-        if (err) return;
+server.listen(PORT, () => {
+    console.log(`Server running on port: ${PORT}`);
+});
 
-        files.forEach(item => {
-            let childPath = path.join(directoryName, item);
+const displayMessages = () => {
+    return new Promise((resolve) => {
+        let timerId = setInterval(() => {
+            console.log(new Date().toISOString())
+        }, INTERVAL);
 
-            fs.stat(childPath, (err, stats) => {
-                if (err) return;
-
-                if (stats.isDirectory()) {
-                    recursiveSearch(childPath);
-                } else {
-                    moveToTargetFolder(childPath);
-                }
-            })
-        })
-    })
-};
-
-const moveToTargetFolder = function (filePath) {
-    let subFolderName = path.basename(filePath)[0].toUpperCase();
-
-    fs.readdir(targetFolderName, (err, files) => {
-        if (err) return;
-
-        let targetDirectory = path.join(targetFolderName, subFolderName);
-        if (files.indexOf(subFolderName) === -1) {
-            fs.mkdir(targetDirectory, err => {
-                if (err) return;
-                moveFile(filePath, targetDirectory);
-            });
-        } else {
-            moveFile(filePath, targetDirectory);
-        }
-
-    })
-};
-
-function moveFile(sourcePath, targetDirectory) {
-    let fileName = path.basename(sourcePath),
-        readStream = fs.createReadStream(sourcePath),
-        writeStream = fs.createWriteStream(path.join(targetDirectory, fileName));
-
-    readStream.on('error', err => {
+        setTimeout(() => {
+            clearInterval(timerId);
+            resolve(new Date().toISOString())
+        }, DURATION);
     });
-    writeStream.on('error', err => {
-    });
-
-    if (isDelete) {
-        readStream.on('close', (err) => {
-            if (err) return;
-
-            fs.unlink(sourcePath, err => {
-                if (err) return;
-
-                deleteFolder();
-            });
-        });
-    }
-
-    readStream.pipe(writeStream);
-}
-
-
-const deleteFolder = function (pathToDeleteFolder = sourceFolderName) {
-    fs.readdir(pathToDeleteFolder, (err, files) => {
-        if (err) return;
-
-        if (files.length) {
-            files.forEach(item => deleteFolder(path.join(pathToDeleteFolder, item)));
-        } else {
-            fs.stat(pathToDeleteFolder, (err, stats) => {
-                if (err || !stats.isDirectory()) return;
-
-                fs.rmdir(pathToDeleteFolder, err => {
-                    if (err) return;
-
-                    if (path.dirname(pathToDeleteFolder) === sourceFolderName) {
-                        fs.rmdir(sourceFolderName, err => {
-                        })
-                    } else {
-                        deleteFolder(path.dirname(pathToDeleteFolder))
-                    }
-                })
-            })
-        }
-    })
 };
-
-
